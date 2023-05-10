@@ -1,0 +1,22 @@
+placaCarro=input("digiite a placa do veiculo: ")
+valorCombustivel=float(input("digite o valor do litro combustível: "))
+sessetaKM=float(input("Digitea quantidade de quilômetros rodados a 60 km/h:  "))
+oitentaKM=float(input("Digitea quantidade de quilômetros rodados a 80 km/h:  "))
+cemKM=float(input("Digitea quantidade de quilômetros rodados a 100 km/h:  "))
+centoevinteKM=float(input("Digitea quantidade de quilômetros rodados a 120 km/h:  "))
+centoequarentaKM=float(input("Digitea quantidade de quilômetros rodados a 140 km/h:  "))
+
+combustivelKM60 = sessetaKM / 30.7 
+combustivelKM80 = oitentaKM / 26.8
+combustivelKM100 = cemKM / 22.4
+combustivelKM120 = centoevinteKM / 18.1
+combustivelKM140 = centoequarentaKM / 14.5
+
+combustivelTotal = combustivelKM60 + combustivelKM80 + combustivelKM100 + combustivelKM120 + combustivelKM140
+custoTotal = combustivelTotal*valorCombustivel
+Velocidademedia=((60*sessetaKM)+(80*oitentaKM)+(100*cemKM)+(120*centoevinteKM)+(140*centoequarentaKM))/(sessetaKM+oitentaKM+cemKM+centoevinteKM+centoequarentaKM)
+
+print("placa do veiculo: ", placaCarro)
+print("Consumo total: ",combustivelTotal,"litros")
+print("Valor total: R$  ",custoTotal)
+print("Velocidade média ponderada: ", Velocidademedia,"km/hr")
