@@ -1,0 +1,48 @@
+ATIVIDADE 1 em pyton
+nome=input("digite seu nome: ")
+peso=float(input("digite seu peso: "))
+agua=float(input("digite a quantidade de agua em litros que voce bebe por dia: "))
+aguaideal= (peso*0.035)
+aguabebida= aguaideal-agua
+
+print("nome: ",nome)
+print("peso: ",peso,"kg")
+print("litros de agua ingeridos",agua,"L")
+print("voce deve beber",round(aguaideal),"L de agua por dia")
+if agua>aguaideal:
+  print("Parabéns, você atingiu a meta de hidratação diária")
+else:
+  print("Continue focado em se hidratar por hoje, ainda faltam",round(aguabebida),"litros! Você consegue!")
+  
+  
+  ATIVIDADE 1 em java(obs: nao consegui rodar pra ver se esta correto meu VS ta com problema)
+  
+  import java.util.Scanner;
+public class App {
+    public static void main(String[] args) throws Exception {
+        Scanner teclado = new Scanner(System.in); 
+
+        System.out.println("Digite seu nome:");        
+        String nome= scanner.nextline();
+        System.out.println("digite seu peso: ");        
+        Double peso = scanner.nextline();
+        System.out.println("digite a quantidade de agua em litros que voce bebe por dia: ");
+        int agua=scanner.nextline();
+        scanner.close();
+
+Double aguaideal= (peso*0.035);
+Double aguabebida= aguaideal-agua;
+
+System.out.println("nome: ",nome);
+System.out.println("peso: ",peso,"kg");
+System.out.println("litros de agua ingeridos",agua,"L");
+System.out.println("voce deve beber",math.ceil(aguaideal),"L de agua por dia");
+if( agua>aguaideal){
+System.out.println("Parabéns, você atingiu a meta de hidratação diária");
+}
+else{
+System.out.println("Continue focado em se hidratar por hoje, ainda faltam",math.ceil(aguabebida),"litros! Você consegue!");
+    }
+    }
+
+}
