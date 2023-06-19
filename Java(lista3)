@@ -1,0 +1,1034 @@
+1) Classe Bola: Crie uma classe que modele uma bola:
+a. Atributos: Cor, circunferência, material
+b. Métodos: trocaCor e mostraCor
+
+public class Bola {
+
+   private String cor;
+   double circunferencia;
+   String material;
+
+   Bola(String cor){
+    this.cor = cor;
+}
+
+   void trocaCor(String novaCor){
+     cor = novaCor;
+}
+
+   String mostraCor() {
+    return cor;
+   }
+
+public static void main(String[]args){
+        
+ Bola bola = new Bola("Vermelho");
+ 
+ System.out.println(bola.mostraCor());
+
+ }
+
+}
+
+2) Classe Quadrado: Crie uma classe que modele um quadrado:
+a. Atributos: Tamanho do lado
+b. Métodos: Mudar valor do Lado, Retornar valor do Lado e calcular Área;
+
+public class Quadrado {
+    private double lado;
+
+    public Quadrado(double lado) {
+        this.lado = lado;
+    }
+
+    public void setLado(double lado) {
+        this.lado = lado;
+    }
+
+    public double getLado() {
+        return lado;
+    }
+
+    public double calcularArea() {
+        return lado * lado;
+    }
+}
+
+3) Classe Retangulo: Crie uma classe que modele um retangulo:
+a. Atributos: LadoA, LadoB (ou Comprimento e Largura, ou Base e Altura, a escolher)
+b. Métodos: Mudar valor dos lados, Retornar valor dos lados, calcular Área e calcular Perímetro;
+c. Crie um programa que utilize esta classe. Ele deve pedir ao usuário que informe as medidades de um local. Depois, deve criar um objeto com as medidas e calcular a quantidade de pisos e de rodapés necessárias para o local.
+
+public class Retangulo {
+    private double ladoA;
+    private double ladoB;
+
+    public Retangulo(double ladoA, double ladoB) {
+        this.ladoA = ladoA;
+        this.ladoB = ladoB;
+    }
+
+    public void setLados(double ladoA, double ladoB) {
+        this.ladoA = ladoA;
+        this.ladoB = ladoB;
+    }
+
+    public double getLadoA() {
+        return ladoA;
+    }
+
+    public double getLadoB() {
+        return ladoB;
+    }
+
+    public double calcularArea() {
+        return ladoA * ladoB;
+    }
+
+    public double calcularPerimetro() {
+        return 2 * (ladoA + ladoB);
+    }
+}
+
+4) Classe Pessoa: Crie uma classe que modele uma pessoa:
+a. Atributos: nome, idade, peso e altura
+b. Métodos: Envelhercer, engordar, emagrecer, crescer. Obs: Por padrão, a cada ano que nossa pessoa envelhece, sendo a idade dela menor que 21 anos, ela deve crescer 0,5 cm.
+
+public class Pessoa {
+    private String nome;
+    private int idade;
+    private double peso;
+    private double altura;
+    
+    public Pessoa(String nome, int idade, double peso, double altura) {
+        this.nome = nome;
+        this.idade = idade;
+        this.peso = peso;
+        this.altura = altura;
+    }
+    
+    public void envelhecer() {
+        idade++;
+        if (idade < 21) {
+            crescer(0.5);
+        }
+    }
+    
+    public void engordar(double quantidade) {
+        peso += quantidade;
+    }
+    
+    public void emagrecer(double quantidade) {
+        peso -= quantidade;
+    }
+    
+    public void crescer(double quantidade) {
+        altura += quantidade;
+    }
+    
+    // Métodos para obter os valores dos atributos
+    
+    public String getNome() {
+        return nome;
+    }
+    
+    public int getIdade() {
+        return idade;
+    }
+    
+    public double getPeso() {
+        return peso;
+    }
+    
+    public double getAltura() {
+        return altura;
+    }
+}
+
+5) Classe Conta Corrente: Crie uma classe para implementar uma conta corrente. A classe deve possuir os seguintes atributos: número da conta, nome do correntista e saldo. 
+Os métodos são os seguintes: alterarNome, depósito e saque; No construtor, saldo é opcional, com valor default zero e os demais atributos são obrigatórios.
+
+public class ContaCorrente {
+    private int numeroConta;
+    private String nomeCorrentista;
+    private double saldo;
+    
+    public ContaCorrente(int numeroConta, String nomeCorrentista) {
+        this.numeroConta = numeroConta;
+        this.nomeCorrentista = nomeCorrentista;
+        this.saldo = 0.0;
+    }
+    
+    public ContaCorrente(int numeroConta, String nomeCorrentista, double saldoInicial) {
+        this.numeroConta = numeroConta;
+        this.nomeCorrentista = nomeCorrentista;
+        this.saldo = saldoInicial;
+    }
+    
+    public void alterarNome(String novoNome) {
+        this.nomeCorrentista = novoNome;
+    }
+    
+    public void deposito(double valor) {
+        saldo += valor;
+    }
+    
+    public void saque(double valor) {
+        if (saldo >= valor) {
+            saldo -= valor;
+        } else {
+            System.out.println("Saldo insuficiente para efetuar o saque.");
+        }
+    }
+    
+    // Métodos para obter os valores dos atributos
+    
+    public int getNumeroConta() {
+        return numeroConta;
+    }
+    
+    public String getNomeCorrentista() {
+        return nomeCorrentista;
+    }
+    
+    public double getSaldo() {
+        return saldo;
+    }
+}
+
+6) Classe TV: Faça um programa que simule um televisor criando-o como um objeto. O usuário deve ser capaz de informar o número do canal e aumentar ou diminuir o volume. Certifique-se de que o número do canal e o nível do volume permanecem dentro de faixas válidas.
+
+public class TV {
+    private int canal;
+    private int volume;
+    
+    public TV() {
+        this.canal = 1; // Canal inicial
+        this.volume = 50; // Volume inicial
+    }
+    
+    public void mudarCanal(int novoCanal) {
+        if (novoCanal >= 1 && novoCanal <= 100) {
+            this.canal = novoCanal;
+            System.out.println("Canal alterado para: " + novoCanal);
+        } else {
+            System.out.println("Canal inválido!");
+        }
+    }
+    
+    public void aumentarVolume() {
+        if (volume < 100) {
+            volume++;
+            System.out.println("Volume aumentado para: " + volume);
+        } else {
+            System.out.println("Volume máximo atingido!");
+        }
+    }
+    
+    public void diminuirVolume() {
+        if (volume > 0) {
+            volume--;
+            System.out.println("Volume diminuído para: " + volume);
+        } else {
+            System.out.println("Volume mínimo atingido!");
+        }
+    }
+    
+    public void status() {
+        System.out.println("TV - Canal: " + canal + " | Volume: " + volume);
+    }
+}
+
+7) Classe Bichinho Virtual:Crie uma classe que modele um Tamagushi (Bichinho Eletrônico):
+a. Atributos: Nome, Fome, Saúde e Idade b. Métodos: Alterar Nome, Fome, Saúde e Idade; Retornar Nome, Fome, Saúde e Idade Obs: Existe mais uma informação que devemos levar em consideração, o Humor do nosso tamagushi, este humor é uma combinação entre os atributos Fome e Saúde, ou seja, um campo calculado, então não devemos criar um atributo para armazenar esta informação por que ela pode ser calculada a qualquer momento.
+
+public class BichinhoVirtual {
+    private String nome;
+    private int fome;
+    private int saude;
+    private int idade;
+    
+    public BichinhoVirtual(String nome) {
+        this.nome = nome;
+        this.fome = 0;
+        this.saude = 100;
+        this.idade = 0;
+    }
+    
+    public void alterarNome(String novoNome) {
+        this.nome = novoNome;
+    }
+    
+    public void alterarFome(int novaFome) {
+        this.fome = novaFome;
+    }
+    
+    public void alterarSaude(int novaSaude) {
+        this.saude = novaSaude;
+    }
+    
+    public void alterarIdade(int novaIdade) {
+        this.idade = novaIdade;
+    }
+    
+    public String retornarNome() {
+        return nome;
+    }
+    
+    public int retornarFome() {
+        return fome;
+    }
+    
+    public int retornarSaude() {
+        return saude;
+    }
+    
+    public int retornarIdade() {
+        return idade;
+    }
+    
+    public int calcularHumor() {
+        return (fome + saude) / 2;
+    }
+}
+
+8) Classe Macaco: Desenvolva uma classe Macaco,que possua os atributos nome e bucho (estomago) e pelo menos os métodos comer(), verBucho() e digerir(). Faça um programa ou teste interativamente, criando pelo menos dois macacos, alimentando-os com pelo menos 3 alimentos diferentes e verificando o conteúdo do estomago a cada refeição. Experimente fazer com que um macaco coma o outro. É possível criar um macaco canibal?
+
+public class Macaco {
+    private String nome;
+    private String bucho;
+    
+    public Macaco(String nome) {
+        this.nome = nome;
+        this.bucho = "";
+    }
+    
+    public void comer(String alimento) {
+        if (bucho.isEmpty()) {
+            bucho = alimento;
+        } else {
+            bucho += ", " + alimento;
+        }
+    }
+    
+    public void verBucho() {
+        if (bucho.isEmpty()) {
+            System.out.println("O estômago de " + nome + " está vazio.");
+        } else {
+            System.out.println("O estômago de " + nome + " contém: " + bucho);
+        }
+    }
+    
+    public void digerir() {
+        if (bucho.isEmpty()) {
+            System.out.println(nome + " não tem nada para digerir.");
+        } else {
+            System.out.println(nome + " está digerindo: " + bucho);
+            bucho = "";
+        }
+    }
+}
+
+9) Classe Ponto e Retangulo: Faça um programa completo utilizando funções e classes que:
+a. Possua uma classe chamada Ponto, com os atributos x e y.
+b. Possua uma classe chamada Retangulo, com os atributos largura e altura.
+c. Possua uma função para imprimir os valores da classe Ponto
+d. Possua uma função para encontrar o centro de um Retângulo.
+e. Você deve criar alguns objetos da classe Retangulo.
+f. Cada objeto deve ter um vértice de partida, por exemplo, o vértice inferior esquerdo do retângulo, que deve ser um objeto da classe Ponto.
+g. A função para encontrar o centro do retângulo deve retornar o valor para um objeto do tipo ponto que indique os valores de x e y para o centro do objeto.
+h. O valor do centro do objeto deve ser mostrado na tela
+i. Crie um menu para alterar os valores do retângulo e imprimir o centro deste retângulo.
+
+import java.util.Scanner;
+
+class Ponto {
+    private double x;
+    private double y;
+
+    public Ponto(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public void imprimir() {
+        System.out.println("Ponto: (" + x + ", " + y + ")");
+    }
+}
+
+class Retangulo {
+    private Ponto ponto;
+    private double largura;
+    private double altura;
+
+    public Retangulo(Ponto ponto, double largura, double altura) {
+        this.ponto = ponto;
+        this.largura = largura;
+        this.altura = altura;
+    }
+
+    public Ponto encontrarCentro() {
+        double centroX = ponto.getX() + largura / 2;
+        double centroY = ponto.getY() + altura / 2;
+        return new Ponto(centroX, centroY);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Criação dos objetos Retangulo
+        Ponto ponto1 = new Ponto(1, 1);
+        Retangulo retangulo1 = new Retangulo(ponto1, 5, 3);
+
+        Ponto ponto2 = new Ponto(-2, -2);
+        Retangulo retangulo2 = new Retangulo(ponto2, 4, 2);
+
+        // Menu interativo
+        int opcao = 0;
+        while (opcao != 3) {
+            System.out.println("\n===== MENU =====");
+            System.out.println("1. Alterar retângulo");
+            System.out.println("2. Imprimir centro do retângulo");
+            System.out.println("3. Sair");
+
+            System.out.print("Digite a opção desejada: ");
+            opcao = scanner.nextInt();
+
+            if (opcao == 1) {
+                System.out.print("Digite o número do retângulo (1 ou 2): ");
+                int retanguloNum = scanner.nextInt();
+                if (retanguloNum == 1) {
+                    alterarRetangulo(retangulo1, scanner);
+                } else if (retanguloNum == 2) {
+                    alterarRetangulo(retangulo2, scanner);
+                } else {
+                    System.out.println("Número de retângulo inválido!");
+                }
+            } else if (opcao == 2) {
+                System.out.print("Digite o número do retângulo (1 ou 2): ");
+                int retanguloNum = scanner.nextInt();
+                if (retanguloNum == 1) {
+                    imprimirCentro(retangulo1);
+                } else if (retanguloNum == 2) {
+                    imprimirCentro(retangulo2);
+                } else {
+                    System.out.println("Número de retângulo inválido!");
+                }
+            } else if (opcao == 3) {
+                System.out.println("Encerrando o programa...");
+            } else {
+                System.out.println("Opção inválida!");
+            }
+        }
+
+        scanner.close();
+    }
+
+    public static void alterarRetangulo(Retangulo retangulo, Scanner scanner) {
+        System.out.print("Digite o novo valor para o ponto x do retângulo: ");
+        double novoX = scanner.nextDouble();
+        System.out.print("Digite o novo valor para o ponto y do retângulo: ");
+        double novoY = scanner.nextDouble();
+        System.out.print("Digite a nova largura do retângulo: ");
+        double novaLargura = scanner.nextDouble();
+        System.out.print("Digite a nova altura do retângulo: ");
+        double novaAltura = scanner.nextDouble();
+
+        retangulo.getPonto().setX(novoX);
+        retangulo.getPonto().setY(novoY);
+        retangulo.setLargura(novaLargura);
+        retangulo.setAltura(novaAltura);
+    }
+
+    public static void imprimirCentro(Retangulo retangulo) {
+        Ponto centro = retangulo.encontrarCentro();
+        centro.imprimir();
+    }
+}
+
+10) Classe Bomba de Combustível: Faça um programa completo utilizando classes e métodos que:
+a. Possua uma classe chamada bombaCombustível, com no mínimo esses atributos:
+i. tipoCombustivel.
+ii. valorLitro
+iii. quantidadeCombustivel
+b. Possua no mínimo esses métodos:
+i. abastecerPorValor( ) – método onde é informado o valor a ser abastecido e mostra a quantidade de litros que foi colocada no veículo
+ii. abastecerPorLitro( ) – método onde é informado a quantidade em litros de combustível e mostra o valor a ser pago pelo cliente.
+iii. alterarValor( ) – altera o valor do litro do combustível.
+iv. alterarCombustivel( ) – altera o tipo do combustível.
+v. alterarQuantidadeCombustivel( ) – altera a quantidade de combustível restante na bomba.
+OBS: Sempre que acontecer um abastecimento é necessário atualizar a quantidade de combustível total na bomba.
+
+import java.util.Scanner;
+
+class BombaCombustivel {
+    private String tipoCombustivel;
+    private double valorLitro;
+    private double quantidadeCombustivel;
+
+    public BombaCombustivel(String tipoCombustivel, double valorLitro, double quantidadeCombustivel) {
+        this.tipoCombustivel = tipoCombustivel;
+        this.valorLitro = valorLitro;
+        this.quantidadeCombustivel = quantidadeCombustivel;
+    }
+
+    public void abastecerPorValor(double valor) {
+        double quantidadeAbastecida = valor / valorLitro;
+        if (quantidadeAbastecida <= quantidadeCombustivel) {
+            quantidadeCombustivel -= quantidadeAbastecida;
+            System.out.println("Abastecimento realizado: " + quantidadeAbastecida + " litros");
+        } else {
+            System.out.println("Quantidade insuficiente de combustível na bomba!");
+        }
+    }
+
+    public void abastecerPorLitro(double quantidadeLitros) {
+        double valorPagar = quantidadeLitros * valorLitro;
+        if (quantidadeLitros <= quantidadeCombustivel) {
+            quantidadeCombustivel -= quantidadeLitros;
+            System.out.println("Valor a pagar: R$" + valorPagar);
+        } else {
+            System.out.println("Quantidade insuficiente de combustível na bomba!");
+        }
+    }
+
+    public void alterarValor(double novoValor) {
+        valorLitro = novoValor;
+    }
+
+    public void alterarCombustivel(String novoCombustivel) {
+        tipoCombustivel = novoCombustivel;
+    }
+
+    public void alterarQuantidadeCombustivel(double novaQuantidade) {
+        quantidadeCombustivel = novaQuantidade;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BombaCombustivel bomba = new BombaCombustivel("Gasolina", 4.5, 1000);
+
+        Scanner scanner = new Scanner(System.in);
+        int opcao = 0;
+
+        while (opcao != 5) {
+            System.out.println("\n===== MENU =====");
+            System.out.println("1. Abastecer por valor");
+            System.out.println("2. Abastecer por litro");
+            System.out.println("3. Alterar valor do litro");
+            System.out.println("4. Alterar tipo de combustível");
+            System.out.println("5. Sair");
+
+            System.out.print("Digite a opção desejada: ");
+            opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    System.out.print("Digite o valor a ser abastecido: R$");
+                    double valorAbastecer = scanner.nextDouble();
+                    bomba.abastecerPorValor(valorAbastecer);
+                    break;
+                case 2:
+                    System.out.print("Digite a quantidade em litros a ser abastecida: ");
+                    double quantidadeLitros = scanner.nextDouble();
+                    bomba.abastecerPorLitro(quantidadeLitros);
+                    break;
+                case 3:
+                    System.out.print("Digite o novo valor do litro: R$");
+                    double novoValor = scanner.nextDouble();
+                    bomba.alterarValor(novoValor);
+                    break;
+                case 4:
+                    System.out.print("Digite o novo tipo de combustível: ");
+                    scanner.nextLine(); // Limpar o buffer do scanner
+                    String novoCombustivel = scanner.nextLine();
+                    bomba.alterarCombustivel(novoCombustivel);
+                    break;
+                case 5:
+                    System.out.println("Encerrando o programa...");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
+            }
+        }
+    }
+}
+
+11) Classe carro: Implemente uma classe chamada Carro com as seguintes propriedades:
+
+a. Um veículo tem um certo consumo de combustível (medidos em km / litro) e uma certa quantidade de combustível no tanque.
+b. O consumo é especificado no construtor e o nível de combustível inicial é 0.
+c. Forneça um método andar( ) que simule o ato de dirigir o veículo por uma certa distância, reduzindo o nível de combustível no tanque de gasolina.
+d. Forneça um método obterGasolina( ), que retorna o nível atual de combustível.
+e. Forneça um método adicionarGasolina( ), para abastecer o tanque. Exemplo de uso:
+meuFusca = Carro(15);           # 15 quilômetros por litro de combustível. 
+meuFusca.adicionarGasolina(20); # abastece com 20 litros de combustível. 
+meuFusca.andar(100);            # anda 100 quilômetros.
+meuFusca.obterGasolina()        # Imprime o combustível que resta no tanque.
+
+class Carro {
+    private double consumoCombustivel;
+    private double nivelCombustivel;
+
+    public Carro(double consumoCombustivel) {
+        this.consumoCombustivel = consumoCombustivel;
+        this.nivelCombustivel = 0;
+    }
+
+    public void andar(double distancia) {
+        double combustivelNecessario = distancia / consumoCombustivel;
+        if (combustivelNecessario <= nivelCombustivel) {
+            nivelCombustivel -= combustivelNecessario;
+            System.out.println("O carro percorreu " + distancia + " km.");
+        } else {
+            System.out.println("Combustível insuficiente para percorrer essa distância!");
+        }
+    }
+
+    public double obterGasolina() {
+        return nivelCombustivel;
+    }
+
+    public void adicionarGasolina(double quantidade) {
+        nivelCombustivel += quantidade;
+        System.out.println("Abastecimento realizado: " + quantidade + " litros.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Carro meuFusca = new Carro(15);
+        meuFusca.adicionarGasolina(20);
+        meuFusca.andar(100);
+        double nivelGasolina = meuFusca.obterGasolina();
+        System.out.println("Nível de gasolina restante: " + nivelGasolina + " litros.");
+    }
+}
+
+12) Classe Conta de Investimento: Faça uma classe contaInvestimento que seja semelhante a classe contaBancaria, com a diferença de que se adicione um atributo taxaJuros.
+Forneça um construtor que configure tanto o saldo inicial como a taxa de juros. Forneça um método adicioneJuros (sem parâmetro explícito) que adicione juros à conta. Escreva um programa que construa uma poupança com um saldo inicial de R$1000,00 e uma taxa de juros de 10%. 
+Depois aplique o método adicioneJuros() cinco vezes e imprime o saldo resultante.
+
+class ContaInvestimento {
+    private double saldo;
+    private double taxaJuros;
+
+    public ContaInvestimento(double saldoInicial, double taxaJuros) {
+        this.saldo = saldoInicial;
+        this.taxaJuros = taxaJuros;
+    }
+
+    public void adicioneJuros() {
+        double juros = saldo * (taxaJuros / 100);
+        saldo += juros;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ContaInvestimento poupanca = new ContaInvestimento(1000.00, 10);
+
+        for (int i = 0; i < 5; i++) {
+            poupanca.adicioneJuros();
+        }
+
+        double saldoFinal = poupanca.getSaldo();
+        System.out.println("Saldo final: R$" + saldoFinal);
+    }
+}
+
+13) Classe Funcionário: Implemente a classe Funcionário. Um empregado tem um nome (um string) e um salário(um double). Escreva um construtor com dois parâmetros (nome e salário) e métodos para devolver nome e salário. Escreva um pequeno programa que teste sua classe.
+
+class Funcionario {
+    private String nome;
+    private double salario;
+
+    public Funcionario(String nome, double salario) {
+        this.nome = nome;
+        this.salario = salario;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Funcionario funcionario = new Funcionario("João", 2500.00);
+
+        System.out.println("Nome do funcionário: " + funcionario.getNome());
+        System.out.println("Salário do funcionário: R$" + funcionario.getSalario());
+    }
+}
+
+14) Aprimore a classe do exercício anterior para adicionar o método aumentarSalario (porcentualDeAumento) que aumente o salário do funcionário em uma certa porcentagem.
+  harry=funcionário("Harry",25000)
+  harry.aumentarSalario(10)
+
+class Funcionario {
+    private String nome;
+    private double salario;
+
+    public Funcionario(String nome, double salario) {
+        this.nome = nome;
+        this.salario = salario;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void aumentarSalario(double porcentualDeAumento) {
+        double aumento = salario * (porcentualDeAumento / 100);
+        salario += aumento;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Funcionario funcionario = new Funcionario("João", 2500.00);
+
+        System.out.println("Nome do funcionário: " + funcionario.getNome());
+        System.out.println("Salário do funcionário: R$" + funcionario.getSalario());
+
+        funcionario.aumentarSalario(10); // Aumenta o salário em 10%
+
+        System.out.println("Novo salário do funcionário: R$" + funcionario.getSalario());
+    }
+}
+
+15) Classe Bichinho Virtual++: Melhore o programa do bichinho virtual, permitindo que o usuário especifique quanto de comida ele fornece ao bichinho e por quanto tempo ele brinca com o bichinho. 
+Faça com que estes valores afetem quão rapidamente os níveis de fome e tédio caem.
+
+class BichinhoVirtual {
+    private String nome;
+    private int fome;
+    private int tedio;
+
+    public BichinhoVirtual(String nome) {
+        this.nome = nome;
+        this.fome = 50;
+        this.tedio = 50;
+    }
+
+    public void alimentar(int quantidadeComida) {
+        fome -= quantidadeComida;
+        if (fome < 0) {
+            fome = 0;
+        }
+    }
+
+    public void brincar(int tempoBrincadeira) {
+        tedio -= tempoBrincadeira;
+        if (tedio < 0) {
+            tedio = 0;
+        }
+    }
+
+    public void passarTempo(int horas) {
+        fome += horas * 5;
+        if (fome > 100) {
+            fome = 100;
+        }
+        tedio += horas * 10;
+        if (tedio > 100) {
+            tedio = 100;
+        }
+    }
+
+    public void exibirStatus() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Nível de Fome: " + fome);
+        System.out.println("Nível de Tédio: " + tedio);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BichinhoVirtual bichinho = new BichinhoVirtual("Bob");
+
+        bichinho.alimentar(30); // Fornece 30 unidades de comida
+        bichinho.brincar(20); // Brinca por 20 minutos
+
+        bichinho.passarTempo(3); // Simula a passagem de 3 horas
+
+        bichinho.exibirStatus();
+    }
+}
+
+16) Crie uma "porta escondida" no programa do programa do bichinho virtual que mostre os valores exatos dos atributos do objeto. 
+Consiga isto mostrando o objeto quando uma opção secreta, não listada no menu, for informada na escolha do usuário. Dica: acrescente um método especial str() à classe Bichinho.
+
+import java.util.Scanner;
+
+class BichinhoVirtual {
+    private String nome;
+    private int fome;
+    private int tedio;
+
+    public BichinhoVirtual(String nome) {
+        this.nome = nome;
+        this.fome = 50;
+        this.tedio = 50;
+    }
+
+    public void alimentar(int quantidadeComida) {
+        fome -= quantidadeComida;
+        if (fome < 0) {
+            fome = 0;
+        }
+    }
+
+    public void brincar(int tempoBrincadeira) {
+        tedio -= tempoBrincadeira;
+        if (tedio < 0) {
+            tedio = 0;
+        }
+    }
+
+    public void passarTempo(int horas) {
+        fome += horas * 5;
+        if (fome > 100) {
+            fome = 100;
+        }
+        tedio += horas * 10;
+        if (tedio > 100) {
+            tedio = 100;
+        }
+    }
+
+    public void exibirStatus() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Nível de Fome: " + fome);
+        System.out.println("Nível de Tédio: " + tedio);
+    }
+
+    public String toString() {
+        return "Nome: " + nome + "\nNível de Fome: " + fome + "\nNível de Tédio: " + tedio;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BichinhoVirtual bichinho = new BichinhoVirtual("Bob");
+
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
+
+        do {
+            exibirMenu();
+            opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    System.out.println("Digite a quantidade de comida fornecida: ");
+                    int quantidadeComida = scanner.nextInt();
+                    bichinho.alimentar(quantidadeComida);
+                    break;
+                case 2:
+                    System.out.println("Digite o tempo de brincadeira: ");
+                    int tempoBrincadeira = scanner.nextInt();
+                    bichinho.brincar(tempoBrincadeira);
+                    break;
+                case 3:
+                    System.out.println("Digite o tempo decorrido em horas: ");
+                    int horas = scanner.nextInt();
+                    bichinho.passarTempo(horas);
+                    break;
+                case 9:
+                    System.out.println(bichinho.toString());
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
+            }
+
+            System.out.println();
+
+        } while (opcao != 0);
+
+        System.out.println("Programa encerrado.");
+        scanner.close();
+    }
+
+    public static void exibirMenu() {
+        System.out.println("Menu:");
+        System.out.println("1 - Alimentar o bichinho");
+        System.out.println("2 - Brincar com o bichinho");
+        System.out.println("3 - Passar tempo");
+        System.out.println("9 - Exibir valores exatos do objeto (opção secreta)");
+        System.out.println("0 - Sair");
+        System.out.println("Digite a opção desejada: ");
+    }
+}
+
+17) Crie uma Fazenda de Bichinhos instanciando vários objetos bichinho e mantendo o controle deles através de uma lista. 
+Imite o funcionamento do programa básico, mas ao invés de exigis que o usuário tome conta de um único bichinho, exija que ele tome conta da fazenda inteira. Cada opção do menu deveria permitir que o usuário executasse uma ação para todos os bichinhos (alimentar todos os bichinhos, brincar com todos os bichinhos, ou ouvir a todos os bichinhos). 
+Para tornar o programa mais interessante, dê para cada bichinho um nivel inicial aleatório de fome e tédio.
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+class BichinhoVirtual {
+    private String nome;
+    private int fome;
+    private int tedio;
+
+    public BichinhoVirtual(String nome, int fome, int tedio) {
+        this.nome = nome;
+        this.fome = fome;
+        this.tedio = tedio;
+    }
+
+    public void alimentar() {
+        fome -= 10;
+        if (fome < 0) {
+            fome = 0;
+        }
+    }
+
+    public void brincar() {
+        tedio -= 10;
+        if (tedio < 0) {
+            tedio = 0;
+        }
+    }
+
+    public void ouvir() {
+        System.out.println("Bichinho " + nome + " diz: Estou bem!");
+    }
+
+    public void passarTempo(int horas) {
+        fome += horas * 5;
+        if (fome > 100) {
+            fome = 100;
+        }
+        tedio += horas * 10;
+        if (tedio > 100) {
+            tedio = 100;
+        }
+    }
+
+    public void exibirStatus() {
+        System.out.println("Bichinho: " + nome);
+        System.out.println("Nível de Fome: " + fome);
+        System.out.println("Nível de Tédio: " + tedio);
+        System.out.println();
+    }
+}
+
+public class FazendaDeBichinhos {
+    private List<BichinhoVirtual> bichinhos;
+
+    public FazendaDeBichinhos() {
+        bichinhos = new ArrayList<>();
+    }
+
+    public void adicionarBichinho(BichinhoVirtual bichinho) {
+        bichinhos.add(bichinho);
+    }
+
+    public void alimentarBichinhos() {
+        for (BichinhoVirtual bichinho : bichinhos) {
+            bichinho.alimentar();
+        }
+    }
+
+    public void brincarComBichinhos() {
+        for (BichinhoVirtual bichinho : bichinhos) {
+            bichinho.brincar();
+        }
+    }
+
+    public void ouvirBichinhos() {
+        for (BichinhoVirtual bichinho : bichinhos) {
+            bichinho.ouvir();
+        }
+    }
+
+    public void passarTempo(int horas) {
+        for (BichinhoVirtual bichinho : bichinhos) {
+            bichinho.passarTempo(horas);
+        }
+    }
+
+    public void exibirStatusBichinhos() {
+        for (BichinhoVirtual bichinho : bichinhos) {
+            bichinho.exibirStatus();
+        }
+    }
+
+    public static void main(String[] args) {
+        FazendaDeBichinhos fazenda = new FazendaDeBichinhos();
+        Random random = new Random();
+
+        fazenda.adicionarBichinho(new BichinhoVirtual("Bichinho 1", random.nextInt(50), random.nextInt(50)));
+        fazenda.adicionarBichinho(new BichinhoVirtual("Bichinho 2", random.nextInt(50), random.nextInt(50)));
+        fazenda.adicionarBichinho(new BichinhoVirtual("Bichinho 3", random.nextInt(50), random.nextInt(50)));
+
+        Scanner scanner = new Scanner(System.in);
+
+        int opcao;
+        do {
+            System.out.println("=== Fazenda de Bichinhos ===");
+            System.out.println("1. Alimentar todos os bichinhos");
+            System.out.println("2. Brincar com todos os bichinhos");
+            System.out.println("3. Ouvir todos os bichinhos");
+            System.out.println("4. Passar tempo na fazenda");
+            System.out.println("5. Exibir status de todos os bichinhos");
+            System.out.println("0. Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    fazenda.alimentarBichinhos();
+                    System.out.println("Todos os bichinhos foram alimentados!");
+                    break;
+                case 2:
+                    fazenda.brincarComBichinhos();
+                    System.out.println("Todos os bichinhos brincaram!");
+                    break;
+                case 3:
+                    fazenda.ouvirBichinhos();
+                    break;
+                case 4:
+                    System.out.print("Digite o número de horas: ");
+                    int horas = scanner.nextInt();
+                    fazenda.passarTempo(horas);
+                    System.out.println("Tempo passado na fazenda: " + horas + " horas");
+                    break;
+                case 5:
+                    fazenda.exibirStatusBichinhos();
+                    break;
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida! Tente novamente.");
+            }
+
+            System.out.println();
+        } while (opcao != 0);
+    }
+}
+
