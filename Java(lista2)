@@ -1,0 +1,563 @@
+1-Faça um Programa que peça dois números e imprima o maior deles
+
+import java.util.Scanner;
+public class numeroMaior {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite o primeiro número: ");
+        int n1 = scanner.nextInt();
+        System.out.println("Digite o segundo número: ");
+        int n2 = scanner.nextInt();
+        
+        int maior = n1 > n2 ? n1 : n2;
+    
+        System.out.println("O maior número informado foi : " + maior);
+    }
+}
+______________________________________________________________________________________
+2-Faça um Programa que peça um valor e mostre na tela se o valor é positivo ou negativo.
+
+import java.util.Scanner;
+public class posiNega {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite um número: ");
+        int numero = scanner.nextInt();
+        if(numero>0){
+            System.out.println("esse numero é positivo");
+        }
+        else if(numero==0){
+            System.out.println("numero é  nulo");
+        }
+        else{
+             System.out.println("O numero é negativo");
+        }
+    
+       
+    }
+}
+_________________________________________________________________________________________________
+3-Faça um Programa que verifique se uma letra digitada é "F" ou "M". Conforme a letra escrever: F - Feminino, M - Masculino, Sexo Inválido.
+
+import java.util.Scanner;
+public class sexo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite seu sexo (F - Feminino, ou, M - Masculino): ");
+        String letra = scanner.next();
+        
+        if(letra.equals("F")){
+            System.out.println("Você é do sexo femenino");
+        }
+        else if(letra.equals("M")){
+            System.out.println("Você é do sexo masculino");
+        }
+        else{
+             System.out.println("letra errada, Sexo Inválido");
+        }
+    }
+}
+__________________________________________________________________________________________________________
+4-Faça um Programa que verifique se uma letra digitada é vogal ou consoante
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite uma letra: ");
+        char letra = scanner.next().charAt(0);
+
+        if (isVowel(letra)) {
+            System.out.println("A letra informada é uma vogal.");
+        } else {
+            System.out.println("A letra informada é uma consoante.");
+        }
+    }
+
+    public static boolean isVowel(char letra) {
+        letra = Character.toLowerCase(letra);
+
+        if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+            return true;
+        }
+
+        return false;
+    }
+}
+_____________________________________________________________________________________________________________
+5-Faça um programa para a leitura de duas notas parciais de um aluno. O programa deve calcular a média alcançada por aluno e apresentar:
+A mensagem "Aprovado", se a média alcançada for maior ou igual a sete;
+A mensagem "Reprovado", se a média for menor do que sete;
+A mensagem "Aprovado com Distinção", se a média for igual a dez.
+
+import java.util.Scanner;
+
+public class nota {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite sua primeira nota ");
+        double nota1 = scanner.nextInt();
+        System.out.println("Digite sua segunda nota ");
+        double nota2 = scanner.nextInt();
+        
+        double media= (nota1+nota2)/2;
+        
+        if (media>7) {
+            System.out.println("Aprovado");
+        } else if(media<7) {
+            System.out.println("Reprovado");
+        }
+        if(media==10){
+            System.out.println("Aprovado com excelencia");
+        }
+    }
+}
+___________________________________________________________________________________________________________________________________________
+6-Faça um Programa que leia três números e mostre o maior deles.
+import java.util.Scanner;
+
+public class numeroMaior {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite o primeiro número: ");
+        int n1 = scanner.nextInt();
+        System.out.println("Digite o segundo número: ");
+        int n2 = scanner.nextInt();
+        System.out.println("Digite o terceiro número: ");
+        int n3 = scanner.nextInt();
+        
+        int maiorNumero = obterMaiorNumero(n1, n2, n3);
+
+        System.out.println("O maior número é " + maiorNumero);
+    }
+
+    public static int obterMaiorNumero(int n1, int n2, int n3) {
+        int maior = n1;
+
+        if (n2 > maior) {
+            maior = n2;
+        }
+
+        if (n3 > maior) {
+            maior = n3;
+        }
+
+        return maior;
+    }
+}
+__________________________________________________________________________________________________________
+7-Faça um Programa que leia três números e mostre o maior e o menor deles.
+
+
+import java.util.Scanner;
+
+public class maiorMenor {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite o primeiro número: ");
+        int n1 = scanner.nextInt();
+        System.out.println("Digite o segundo número: ");
+        int n2 = scanner.nextInt();
+        System.out.println("Digite o terceiro número: ");
+        int n3 = scanner.nextInt();
+        
+        int maiorNumero = obterMaiorNumero(n1, n2, n3);
+        int menorNumero = obterMenorNumero(n1, n2, n3);
+
+        System.out.println("O maior número é " + maiorNumero);
+        System.out.println("O menor número é " + menorNumero);
+    }
+
+    public static int obterMaiorNumero(int n1, int n2, int n3) {
+        int maior = n1;
+
+        if (n2 > maior) {
+            maior = n2;
+        }
+
+        if (n3 > maior) {
+            maior = n3;
+        }
+
+        return maior;
+    }
+    public static int obterMenorNumero(int n1, int n2, int n3){
+        int menor = n1;
+        
+        if(n2 < menor){
+            menor =n2;
+        }
+        if(n3 < menor){
+            menor = n3;
+        }
+        return menor;
+    }
+}
+_____________________________________________________________________________________________________________________________________________
+8-Faça um programa que pergunte o preço de três produtos e informe qual produto você deve comprar, sabendo que a decisão é sempre pelo mais barato.
+
+import java.util.Scanner;
+
+public class menorPreco {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite o primeiro preço: ");
+        int p1 = scanner.nextInt();
+        System.out.println("Digite o segundo preço: ");
+        int p2 = scanner.nextInt();
+        System.out.println("Digite o terceiro preço: ");
+        int p3 = scanner.nextInt();
+        
+        int menorPreco = obterMenorPreco(p1, p2, p3);
+
+        System.out.println("O menor preço é " + menorPreco);
+    }
+ 
+    public static int obterMenorPreco(int p1, int p2, int p3){
+        int menor = p1;
+        
+        if(p2 < menor){
+            menor =p2;
+        }
+        if(p3 < menor){
+            menor = p3;
+        }
+        return menor;
+    }
+}
+________________________________________________________________________________________________________________________________
+9-Faça um Programa que leia três números e mostre-os em ordem decrescente.
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class ordem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite o primeiro numero: ");
+        int n1 = scanner.nextInt();
+        System.out.println("Digite o segundo numero: ");
+        int n2 = scanner.nextInt();
+        System.out.println("Digite o terceiro numero: ");
+        int n3 = scanner.nextInt();
+        
+       int[] numeros = {n1, n2, n3};
+        Arrays.sort(numeros);
+
+        System.out.println("Números em ordem crescente: ");
+        for (int numero : numeros) {
+            System.out.println(numero); 
+    }
+}
+}
+________________________________________________________________________________________________________________________________
+10-Faça um Programa que pergunte em que turno você estuda. Peça para digitar M-matutino ou V-Vespertino ou N- Noturno. 
+Imprima a mensagem "Bom Dia!", "Boa Tarde!" ou "Boa Noite!" ou "Valor Inválido!", conforme o caso.
+
+import java.util.Scanner;
+public class turno {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Qual o turno em que você estuda. Digite M - matutino ou V - Vespertino ou N - Noturno");
+        String letra = scanner.next();
+        
+        if(letra.equals("M")){
+            System.out.println("Bom dia");
+        }
+        else if(letra.equals("V")){
+            System.out.println("Boa tarde");
+        }
+        else if(letra.equals("N")){
+            System.out.println("Boa noite");
+        }
+        else{
+             System.out.println("letra errada, valor inválido!");
+        }
+    }
+}
+___________________________________________________________________________________________________________________________________________
+11-As Organizações Tabajara resolveram dar um aumento de salário aos seus colaboradores e lhe contraram para desenvolver o programa que calculará os reajustes.
+Faça um programa que recebe o salário de um colaborador e o reajuste segundo o seguinte critério, baseado no salário atual:
+salários até R$ 280,00 (incluindo) : aumento de 20%
+salários entre R$ 280,00 e R$ 700,00 : aumento de 15%
+salários entre R$ 700,00 e R$ 1500,00 : aumento de 10%
+salários de R$ 1500,00 em diante : aumento de 5% Após o aumento ser realizado, informe na tela:
+o salário antes do reajuste;
+o percentual de aumento aplicado;
+o valor do aumento;
+o novo salário, após o aumento.
+
+import java.util.Scanner;
+public class salario {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite seu salario");
+        double salario = scanner.nextDouble();
+        double aumento, nvSalario;
+        
+        if(salario<=280){
+            aumento=(salario*0.2);
+            nvSalario=aumento+salario;
+            System.out.println("Seu salario atual é "+salario);
+            System.out.println("A taxa que caiu sobre o seu salario foi de 20%");
+            System.out.println("o valor do aumento é de "+ aumento);
+            System.out.println("seu novo salario é "+ nvSalario);
+        }
+        else if(salario<=700){
+            aumento=(salario*0.15);
+            nvSalario=aumento+salario;
+            System.out.println("Seu salario atual é "+salario);
+            System.out.println("A taxa que caiu sobre o seu salario foi de 15%");
+            System.out.println("o valor do aumento é de "+ aumento);
+            System.out.println("seu novo salario é "+ nvSalario);
+            
+        }
+        else if(salario<=1500){
+            aumento=(salario*0.1);
+            nvSalario=aumento+salario;
+            System.out.println("Seu salario atual é "+salario);
+            System.out.println("A taxa que caiu sobre o seu salario foi de 10%");
+            System.out.println("o valor do aumento é de "+ aumento);
+            System.out.println("seu novo salario é "+ nvSalario);
+        }
+        else if(salario>1500){
+             aumento=(salario*0.05);
+            nvSalario=aumento+salario;
+            System.out.println("Seu salario atual é "+salario);
+            System.out.println("A taxa que caiu sobre o seu salario foi de 5%");
+            System.out.println("o valor do aumento é de "+ aumento);
+            System.out.println("seu novo salario é "+ nvSalario);
+        }
+        
+    }
+}
+____________________________________________________________________________________________________________________________
+12-Faça um programa para o cálculo de uma folha de pagamento, sabendo que os descontos são do Imposto de Renda, que depende do salário bruto (conforme tabela abaixo) 
+e 3% para o Sindicato e que o FGTS corresponde a 11% do Salário Bruto, mas não é descontado (é a empresa que deposita). 
+O Salário Líquido corresponde ao Salário Bruto menos os descontos. O programa deverá pedir ao usuário o valor da sua hora e a quantidade de horas trabalhadas no mês.
+Desconto do IR:
+Salário Bruto até 900 (inclusive) - isento
+Salário Bruto até 1500 (inclusive) - desconto de 5%
+Salário Bruto até 2500 (inclusive) - desconto de 10%
+Salário Bruto acima de 2500 - desconto de 20% 
+
+import java.util.Scanner;
+public class salario {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite seu salario");
+        double salarioBruto = scanner.nextDouble();
+        double IR, INSS, FGTS, totalDescontos, salarioLiq;
+        
+        if(salarioBruto<=900){
+            salarioLiq=salarioBruto;
+            System.out.println("Seu salario bruto é "+salarioBruto);
+            System.out.println("Voce e insento de descontos");
+            System.out.println("Seu salario Liquido é "+salarioLiq);
+        }
+        else if(salarioBruto<=1500){
+            IR=salarioBruto*0.05;
+            INSS=salarioBruto*0.1;
+            FGTS=salarioBruto*0.11;
+            totalDescontos= IR+INSS;
+            salarioLiq=(salarioBruto-totalDescontos);
+            System.out.println("Seu salario bruto é "+salarioBruto);
+            System.out.println("Voce teve um desconto de "+totalDescontos);
+            System.out.println("Seu salario Liquido é "+salarioLiq);
+        }
+        else if(salarioBruto<=2500){
+            IR=salarioBruto*0.10;
+            INSS=salarioBruto*0.1;
+            FGTS=salarioBruto*0.11;
+            totalDescontos= IR+INSS;
+            totalDescontos= IR+INSS;
+            salarioLiq=(salarioBruto-totalDescontos);
+            System.out.println("Seu salario bruto é "+salarioBruto);
+            System.out.println("Voce teve um desconto de "+totalDescontos);
+            System.out.println("Seu salario Liquido é "+salarioLiq);
+        }
+        else if(salarioBruto>2500){
+            IR=salarioBruto*0.2;
+            INSS=salarioBruto*0.1;
+            FGTS=salarioBruto*0.11;
+            totalDescontos= IR+INSS;
+            totalDescontos= IR+INSS;
+            salarioLiq=(salarioBruto-totalDescontos);
+            System.out.println("Seu salario bruto é "+salarioBruto);
+            System.out.println("Voce teve um desconto de "+totalDescontos);
+            System.out.println("Seu salario Liquido é "+salarioLiq);
+        }
+    }
+}
+______________________________________________________________________________________________________________________________________________________________
+13-Faça um Programa que leia um número e exiba o dia correspondente da semana. (1-Domingo, 2- Segunda, etc.), se digitar outro valor deve aparecer valor inválido.
+
+import java.util.Scanner;
+public class dias{
+  public static void main(String[] args){
+  Scanner scanner = new Scanner(System.in);
+  
+  System.out.println("digite um numero: ");
+  int dias = scanner.nextInt();
+  
+  if(dias==1){
+     System.out.println("Domingo");
+  }
+  else if(dias==2){
+      System.out.println("Segunda- Feira");
+  }
+  else if(dias==3){
+      System.out.println("Terça-Feira");
+  }
+  else if(dias==4){
+      System.out.println("Quarta-Feira");
+  }
+  else if(dias==5){
+      System.out.println("Quinta-Feira");
+  }
+  else if(dias==6){
+      System.out.println("Sexta-Feira");
+  }
+  else if(dias==7){
+      System.out.println("Sabado");
+  }
+  else {
+     System.out.println("Numero invalido");
+  }
+  }
+ }
+ ________________________________________________________________________________________________________________________________________________
+ 14-Faça um programa que lê as duas notas parciais obtidas por um aluno numa disciplina ao longo de um semestre, e calcule a sua média. A atribuição de conceitos obedece à tabela abaixo:
+  Média de Aproveitamento  Conceito
+  Entre 9.0 e 10.0        A
+  Entre 7.5 e 9.0         B
+  Entre 6.0 e 7.5         C
+  Entre 4.0 e 6.0         D
+  Entre 4.0 e zero        E
+O algoritmo deve mostrar na tela as notas, a média, o conceito correspondente e a mensagem “APROVADO” se o conceito for A, B ou C ou “REPROVADO” se o conceito for D ou E.
+
+import java.util.Scanner;
+public class dias{
+  public static void main(String[] args){
+  Scanner scanner = new Scanner(System.in);
+  
+  System.out.println("digite sua primeira nota: ");
+  double nota1 = scanner.nextDouble();
+  System.out.println("digite sua segunda nota: ");
+  double nota2 = scanner.nextDouble();
+  
+  double media = (nota1+nota2)/2;
+  
+  
+  if(media<=9 && media>=10){
+     System.out.println("sua primeira nota: "+ nota1+" Sua segunda nota: "+nota2);
+     System.out.println("A media das suas notas é: "+ media);
+     System.out.println("Seu conceito é A, e você esta APROVADO");
+  }
+  else if(media<=7.5 && media>9){
+      System.out.println("sua primeira nota: "+ nota1+" Sua segunda nota: "+nota2);
+     System.out.println("A media das suas notas é: "+ media);
+     System.out.println("Seu conceito é B, e você esta APROVADO");
+  }
+  else if(media<=6 && media>7.5){
+      System.out.println("sua primeira nota: "+ nota1+" Sua segunda nota: "+nota2);
+     System.out.println("A media das suas notas é: "+ media);
+     System.out.println("Seu conceito é C, e você esta APROVADO");
+  }
+  else if(media<=4 && media>6){
+      System.out.println("sua primeira nota: "+ nota1+" Sua segunda nota: "+nota2);
+     System.out.println("A media das suas notas é: "+ media);
+     System.out.println("Seu conceito é D, e você esta REPROVADO");
+  }
+  else if(media<=0 && media>4){
+      System.out.println("sua primeira nota: "+ nota1+" Sua segunda nota: "+nota2);
+     System.out.println("A media das suas notas é: "+ media);
+     System.out.println("Seu conceito é E, e você esta REPROVADO");
+  }
+  }
+ }
+__________________________________________________________________________________________________________________________________________________
+15-Faça um Programa que peça os 3 lados de um triângulo. O programa deverá informar se os valores podem ser um triângulo. Indique, caso os lados formem um triângulo, se o mesmo é: equilátero, isósceles ou escaleno.
+Dicas:
+Três lados formam um triângulo quando a soma de quaisquer dois lados for maior que o terceiro;
+Triângulo Equilátero: três lados iguais;
+Triângulo Isósceles: quaisquer dois lados iguais;
+Triângulo Escaleno: três lados diferentes;
+
+import java.util.Scanner;
+public class triangulo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Digite o primeiro lado: ");
+        int l1 = scanner.nextInt();
+        System.out.println("Digite o segundo lado: ");
+        int l2 = scanner.nextInt();
+        System.out.println("Digite o terceiro lado: ");
+        int l3 = scanner.nextInt();
+        
+       if(l1==l2&&l3==l2&&l1==l3){
+           System.out.println("triangulo equilatero");
+        }
+        else if(l1!=l2 && l1!=l3&& l2!=l3){
+            System.out.println("triangulo escaleno");
+        }
+        else if(l1==l2 && l1!=l3||l1!=l2&& l2==l3){
+            System.out.println("triangulo isoceles");
+        }
+    }
+}
+________________________________________________________________________________________________________________________________________________
+16-Faça um programa que calcule as raízes de uma equação do segundo grau, na forma ax2 + bx + c. O programa deverá pedir os valores de a, b e c e fazer as consistências,
+informando ao usuário nas seguintes situações:
+Se o usuário informar o valor de A igual a zero, a equação não é do segundo grau e o programa não deve fazer pedir os demais valores, sendo encerrado;
+Se o delta calculado for negativo, a equação não possui raizes reais. Informe ao usuário e encerre o programa;
+Se o delta calculado for igual a zero a equação possui apenas uma raiz real; informe-a ao usuário;
+
+import java.util.Scanner;
+public class EquacaoSegundoGrau {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Digite o valor de a: ");
+        double a = input.nextDouble();
+
+        if (a == 0) {
+            System.out.println("A equação não é do segundo grau.");
+        } else {
+            System.out.print("Digite o valor de b: ");
+            double b = input.nextDouble();
+
+            System.out.print("Digite o valor de c: ");
+            double c = input.nextDouble();
+
+            double delta = b * b - 4 * a * c;
+
+            if (delta < 0) {
+                System.out.println("A equação deu um numero negativo e não possui raízes reais.");
+            } else if (delta == 0) {
+                double raiz = -b / (2 * a);
+                System.out.println("A raiz da equação é: " + raiz);
+            } else {
+                double raiz1 = (-b + Math.sqrt(delta)) / (2 * a);
+                double raiz2 = (-b - Math.sqrt(delta)) / (2 * a);
+                System.out.println("A equação possui duas raízes reais:");
+                System.out.println("Raiz 1: " + raiz1);
+                System.out.println("Raiz 2: " + raiz2);
+            }
+        }
+    }
+}
+____________________________________________________________________________________________________________________________________________________________
