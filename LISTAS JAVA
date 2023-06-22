@@ -1,2 +1,361 @@
 LISTA-1
 --------------------------------------------------------------------------------------------------------------------------------------
+1-Faça um Programa que mostre a mensagem "Alo mundo" na tela.
+
+  public class MyClass {
+      public static void main(String args[]) {
+       System.out.println("Alo mundo");
+      }
+  }
+__________________________________________________________________________
+2-Faça um Programa que peça um número e então mostre a mensagem O número informado foi [número]
+
+  import java.util.Scanner;
+  public class numero{
+  public static void main(String[] args) {
+      Scanner scanner= new Scanner(System.in);
+      System.out.println("digite um numero: ");
+      int numero = scanner.nextInt();
+      System.out.println("O número informado foi "+ numero);
+      }
+  }
+_________________________________________________________________________
+3-Faça um Programa que peça dois números e imprima a soma.
+
+  import java.util.Scanner;
+  public class soma{
+   public static void main(String[] args) {
+      Scanner scanner= new Scanner(System.in);
+     
+       System.out.println("digite um numero: ");
+       int n1 = scanner.nextInt();
+     
+       System.out.println("digite outro numero: ");
+       int n2 = scanner.nextInt();
+     
+       int soma=n1+n2;
+       System.out.println("A soma dos numeros e igual a "+ soma);
+      }
+  }
+__________________________________________________________________________
+4-Faça um Programa que peça as 4 notas bimestrais e mostre a média.
+
+    import java.util.Scanner;
+  public class media{
+   public static void main(String[] args) {
+      Scanner scanner= new Scanner(System.in);
+     
+       System.out.println("digite a primeira nota:");
+       double n1 = scanner.nextInt();
+     
+       System.out.println("digite a segunda nota:");
+       double n2 = scanner.nextInt();
+     
+       System.out.println("digite a terceira nota:");
+       double n3 = scanner.nextInt();
+     
+       System.out.println("digite a quarta nota:");
+       double n4 = scanner.nextInt();
+     
+       double media=((n1+n2+n3+n4)/4);
+       System.out.println("A media da provas e igual a "+ media);
+      }
+  }
+___________________________________________________________________
+5-Faça um Programa que converta metros para centímetros
+
+    public class centimetros{
+      public static void main(String[] args) {
+        double metros= 10;
+        double centimetros= metros*100;
+        System.out.println(centimetros);
+        }
+    }
+___________________________________________________________________
+6-Faça um Programa que peça o raio de um círculo, calcule e mostre sua área.
+
+      import java.util.Scanner;
+  public class circulo{
+   public static void main(String[] args) {
+      Scanner scanner= new Scanner(System.in);
+     
+       System.out.println("digite o raio de um circulo:");
+       double raio = scanner.nextInt();
+       double expoente= 2;
+       double r = Math.pow(raio, expoente);
+     
+       double area=(r*3.14);
+       System.out.println("A area do circulo e "+ area);
+      }
+  }
+ ___________________________________________________________________________
+ 7-Faça um Programa que calcule a área de um quadrado, em seguida mostre o dobro desta área para o usuário
+ 
+   public class quadrado{
+    public static void main(String[] args) {
+    double lado1= 4;
+    double expoente= 2;
+  
+    double area = Math.pow(lado1, expoente);
+    double dobro = area*2;
+    System.out.println(dobro);
+    }
+    }
+__________________________________________________________________________
+ 8-Faça um Programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês. Calcule e mostre o total do seu salário no referido mês.
+  
+  import java.util.Scanner;
+  public class salario{
+   public static void main(String[] args) {
+      Scanner scanner= new Scanner(System.in);
+     
+       System.out.println("digite quanto voce ganha por hora: ");
+       double valorHora = scanner.nextInt();
+     
+       System.out.println("digite quantas horas voce trabalha por dia: ");
+       double horaTrabalho = scanner.nextInt();
+       double salarioHora=(valorHora*horaTrabalho);
+       double salarioMensal= (salarioHora*30);
+     
+       System.out.println("O valor do seu salario mensal e de "+salarioMensal);
+      }
+  }
+______________________________________________________________________________________________________________________________  
+9-Faça um Programa que peça a temperatura em graus Fahrenheit, transforme e mostre a temperatura em graus Celsius.
+C = 5 * ((F-32) / 9).
+
+  import java.util.Scanner;
+  public class temp{
+   public static void main(String[] args) {
+      Scanner scanner= new Scanner(System.in);
+     
+       System.out.println("digite a temperatura em graus Fahrenheit: ");
+       double F = scanner.nextInt();
+     
+       double Celsius = 5 * ((F-32) / 9);
+     
+       System.out.println(Celsius+" °C");
+      }
+  }
+______________________________________________________________________________________________________________________________
+10-Faça um Programa que peça a temperatura em graus Celsius, transforme e mostre em graus Fahrenheit.
+
+  import java.util.Scanner;
+  public class temp{
+   public static void main(String[] args) {
+      Scanner scanner= new Scanner(System.in);
+     
+       System.out.println("digite a temperatura em graus Celsius: ");
+       double C = scanner.nextInt();
+     
+       double Fahrenheit =   ((C * 9)/5)+32;
+     
+       System.out.println(Fahrenheit+" F");
+      }
+  }
+__________________________________________________________________________________________________________________
+11-Faça um Programa que peça 2 números inteiros e um número real. Calcule e mostre:
+a)o produto do dobro do primeiro com metade do segundo .
+b)a soma do triplo do primeiro com o terceiro.
+c)o terceiro elevado ao cubo.
+
+import java.util.Scanner;
+  public class numeros{
+   public static void main(String[] args) {
+      Scanner scanner= new Scanner(System.in);
+     
+       System.out.println("digite um numero inteiro: ");
+       double n1 = scanner.nextInt();
+       
+       System.out.println("digite um numero inteiro: ");
+       double n2 = scanner.nextInt();
+       
+       System.out.println("digite um numero real: ");
+       double n3 = scanner.nextInt();
+       double expoente=3;
+       
+       double A = (n1*2)*(n2/2);
+       double B = (n1*3)+n3;
+       double C = Math.pow(n3,expoente);
+       
+        System.out.println("O resultado é "+ A);
+        System.out.println("O resultado é "+ B);
+        System.out.println("O resultado é "+ C);
+      }
+  }
+  ______________________________________________________________________________________________________________________________________________________
+  12-Tendo como dados de entrada a altura de uma pessoa, construa um algoritmo que calcule seu peso ideal, usando a seguinte fórmula: (72.7*altura) - 58
+  
+  import java.util.Scanner;
+  public class peso{
+   public static void main(String[] args) {
+      Scanner scanner= new Scanner(System.in);
+     
+       System.out.println("digite sua altura: ");
+       double altura = scanner.nextInt();
+       
+       double pesoIdeal = (72.7*altura) - 58;
+        System.out.println("O peso ideal e "+ pesoIdeal);
+      }
+  }
+ __________________________________________________________________________________________________________________________________________________________________
+ 13-Tendo como dado de entrada a altura (h) de uma pessoa, construa um algoritmo que calcule seu peso ideal, utilizando as seguintes fórmulas:
+Para homens: (72.7*h) - 58
+Para mulheres: (62.1*h) - 44.7
+
+import java.util.Scanner;
+  public class peso{
+   public static void main(String[] args) {
+      Scanner scanner= new Scanner(System.in);
+     
+       System.out.println("digite sua altura: ");
+       double h = scanner.nextInt();
+       
+       double pesoIdealH = (72.7*h) - 58;
+       double pesoIdealM = (62.1*h) - 44.7;
+        System.out.println("O peso ideal para homens "+ pesoIdealH);
+        System.out.println("O peso ideal para mulheres "+ pesoIdealM);
+      }
+  }
+___________________________________________________________________________________________________________________________________________________________
+14-João Papo-de-Pescador, homem de bem, comprou um microcomputador para controlar o rendimento diário de seu trabalho. 
+Toda vez que ele traz um peso de peixes maior que o estabelecido pelo regulamento de pesca do estado de São Paulo (50 quilos) deve pagar uma multa de R$ 4,00 por quilo excedente.
+João precisa que você faça um programa que leia a variável peso (peso de peixes) e calcule o excesso. 
+Gravar na variável excesso a quantidade de quilos além do limite e na variável multa o valor da multa que João deverá pagar.
+Imprima os dados do programa com as mensagens adequadas.
+
+import java.util.Scanner;
+  public class peso{
+   public static void main(String[] args) {
+      Scanner scanner= new Scanner(System.in);
+      
+       System.out.println("digite o peso do peixe: ");
+       double peso = scanner.nextInt();
+       double excesso= (peso-50);
+       double multa= (excesso)*4;
+      
+       
+        System.out.println("O peso do peixe é "+peso);
+        if(peso>50){
+        System.out.println("Voce excedeu o limite de peso em "+ excesso+ "KG e foi multado em "+multa+"R$");
+        }
+        else{
+        System.out.println("Voce nao excedeu o limite de peso");
+        }
+        }
+}
+____________________________________________________________________________________________________________________________________________________________
+15-Faça um Programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês. Calcule e mostre o total do seu salário no referido mês, sabendo-se que são descontados 11% para o Imposto de Renda, 8% para o INSS e 5% para o sindicato, faça um programa que nos dê:
+salário bruto.
+quanto pagou ao INSS.
+quanto pagou ao sindicato.
+o salário líquido.
+calcule os descontos e o salário líquido, conforme a tabela abaixo:
++ Salário Bruto : R$
+- IR (11%) : R$
+- INSS (8%) : R$
+- Sindicato ( 5%) : R$
+= Salário Liquido : R$
+Obs.: Salário Bruto - Descontos = Salário Líquido.
+
+import java.util.Scanner;
+  public class peso{
+   public static void main(String[] args) {
+      Scanner scanner= new Scanner(System.in);
+      
+       System.out.println("digite seu salario bruto: ");
+       double salarioBruto = scanner.nextInt();
+       
+       double IR= salarioBruto*0.11;
+       double INSS= salarioBruto*0.08;
+       double sindicato= salarioBruto*0.05;
+       double salarioLiquido= salarioBruto-(IR+INSS+sindicato);
+       
+        System.out.println("seu salario bruto e "+salarioBruto);
+        System.out.println("Desconto do IR "+ IR);
+        System.out.println("Desconto do INSS "+INSS);
+        System.out.println("Desconto do sindicato "+sindicato);
+        System.out.println("seu salario liquido e "+salarioLiquido);
+     }
+}
+__________________________________________________________________________________________________________________________________
+16-Faça um programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser pintada.
+Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00. 
+Informe ao usuário a quantidades de latas de tinta a serem compradas e o preço total.
+
+ import java.util.Scanner;
+
+public class Tintas {
+public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o tamanho da área a ser pintada em metros quadrados: ");
+        double Area = scanner.nextInt();
+        
+        double tintaPorLitro = 3;
+        double lataLitro = 18;
+        double precoLata = 80.00;
+        
+        double quantidadeLitros =  Math.ceil(Area /  tintaPorLitro);
+        
+        double quantidadeLatas = Math.ceil(quantidadeLitros /  lataLitro);
+        
+        double precoTotal = quantidadeLatas * precoLata;
+        
+        System.out.println("Quantidade de latas de tinta a serem compradas: " + quantidadeLatas);
+        System.out.println("Preço total: R$" + precoTotal);
+    }
+}
+________________________________________________________________________________________________________________________________________________________________
+17-Faça um Programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser pintada. 
+Considere que a cobertura da tinta é de 1 litro para cada 6 metros quadrados e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00 ou em galões de 3,6 litros,
+que custam R$ 25,00.
+Informe ao usuário as quantidades de tinta a serem compradas e os respectivos preços em 3 situações:
+comprar apenas latas de 18 litros;
+comprar apenas galões de 3,6 litros;
+misturar latas e galões, de forma que o desperdício de tinta seja menor. Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, considere latas cheias.
+
+import java.util.Scanner; 
+ public class Main{ 
+  
+  public static void main(String[] args){ 
+ System.out.println("Entre com o tamanho da área: "); 
+  
+ litros = tamanho / 6; 
+ latas = litros / 18; 
+  
+ if (latas % 18 != 0) { 
+     latas += 1; 
+ preco = latas * 80; 
+ } 
+ if (galoes = litros / 3.6) { 
+  galoes % 3.6 != 0: 
+     galoes += 1 
+ preco2 = galoes * 25 
+ } 
+ System.out.printf(()"Apenas latas de 18 litros: %d" + latas), (preco:%d + preco); 
+ System.out.printf(("Apenas galões de 3.6 litros: %d" % galoes), (preço: %d'% preco2); 
+   } 
+ }
+__________________________________________________________________________________________________________________________________________________________________
+18-Faça um programa que peça o tamanho de um arquivo para download (em MB) e a velocidade de um link de Internet (em Mbps), calcule e informe o tempo aproximado de download do arquivo usando este link (em minutos)
+
+import java.util.Scanner;
+
+public class Download {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o tamanho do arquivo MB ");
+        double MB = scanner.nextInt();
+        System.out.println("Digite a velocidade para Download em MBPS: ");
+        double MBPS = scanner.nextInt();
+        
+        double DPM = MB*(MBPS*60);
+    
+        System.out.println("Seu DOWNLOAD ira demora : " + DPM+" minutos");
+    }
+}
+______________________________________________________________________________________________________________________________________
+LISTA-2
+--------------------------------------------------------------------------------------------------------------------------------
